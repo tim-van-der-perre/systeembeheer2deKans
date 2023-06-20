@@ -4,3 +4,11 @@
 # Address blocks in CIDR notation
 127.0.0.0/8
 ::1/128
+
+#my personal ip addresses
+172.25.178.253/20
+fe80::215:5dff:fe44:ff4a/64
+
+#mrT ip adresses via nslookup
+193.191.177.6
+2001:6a8:2880:a021::6
