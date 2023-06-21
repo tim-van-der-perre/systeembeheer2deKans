@@ -7,3 +7,9 @@ Address = 193.191.177.226/25
 Gateway = 193.191.177.254
 DHCP = no
 IPv6AcceptRA = false
+
+ARP=on
+
+[Address]
+Address=193.191.177.254
+Label=eth0:arp
