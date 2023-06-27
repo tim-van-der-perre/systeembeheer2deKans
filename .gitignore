@@ -1,2 +1,4 @@
 mrt/
+/etc/bind/named.conf.mrt-zones
+/etc/bind/zones/*.zone
 
