@@ -1,0 +1,29 @@
+#!/bin/bash
+
+if [ "$(whoami)" != "root" ]; then
+    echo "Error: This script must be run as root."
+    exit 1
+fi
+
+if [ $# -eq 0 ]; then
+    echo "Error: No subzone provided."
+    exit 1
+fi
+
+subzone="$1"
+
+# Add the zone file to named.conf.local
+echo "zone \"$subzone.tim-vanderperre.sb.uclllabs.be\" {
+    type master;
+    file \"/etc/bind/zones/$subzone.tim-vanderperre.sb.uclllabs.be.zone\";
+};" | sudo tee -a /etc/bind/named.conf.mrt-zones > /dev/null
+
+# Create the zone file
+sudo cp /etc/bind/zones/tim-vanderperre.sb.uclllabs.be.zone "/etc/bind/zones/$subzone.tim-vanderperre.sb.uclllabs.be.zone"
+
+# Add NS record to the main zone
+echo -e "\n$subzone.tim-vanderperre.sb.uclllabs.be. IN NS ns.tim-vanderperre.sb.uclllabs.be." | sudo tee -a /etc/bind/zones/tim-vanderperre.sb.uclllabs.be.zone > /dev/null
+
+# Reload the DNS server
+sudo systemctl reload bind9
+

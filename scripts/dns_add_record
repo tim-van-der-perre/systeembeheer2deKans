@@ -1,0 +1,48 @@
+#!/bin/bash
+
+if [ "$(whoami)" != "root" ]; then
+    echo "Error: This script must be run as root."
+    exit 1
+fi
+
+if [ $# -lt 4 ]; then
+    echo "Error: Insufficient arguments."
+    exit 1
+fi
+
+while getopts ":t:" opt; do
+    case $opt in
+        t)
+            record_type="$OPTARG"
+            ;;
+        \?)
+            echo "Error: Invalid option -$OPTARG."
+            exit 1
+            ;;
+    esac
+done
+
+shift $((OPTIND - 1))
+hostname="$1"
+ip_address="$2"
+zone="$3"
+
+if [ -z "$record_type" ]; then
+    record_type="A"
+fi
+
+case $record_type in
+    A | MX | CNAME)
+        ;;
+    *)
+        echo "Error: Invalid record type."
+        exit 1
+        ;;
+esac
+
+# Add the record to the zone file
+echo "$hostname IN $record_type $ip_address" | sudo tee -a "/etc/bind/zones/$zone.zone" > /dev/null
+
+# Reload the DNS server
+sudo systemctl reload bind9
+
