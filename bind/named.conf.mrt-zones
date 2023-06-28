@@ -7,3 +7,7 @@ zone "subzoneaht9ja.tim-vanderperre.sb.uclllabs.be" {
     type master;
     file "/etc/bind/mrt-zone-files/db.subzoneaht9ja.tim-vanderperre.sb.uclllabs.be";
 };
+zone "subzoneuu1dah.tim-vanderperre.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/mrt-zone-files/db.subzoneuu1dah.tim-vanderperre.sb.uclllabs.be";
+};
