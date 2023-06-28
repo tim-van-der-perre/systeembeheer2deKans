@@ -1,7 +1,5 @@
 options {
 	directory "/var/cache/bind";
-	
-	include "/etc/bind/named.conf.mrt-zones";
 
 	// If there is a firewall between you and nameservers you want
 	// to talk to, you may need to fix the firewall to allow multiple
