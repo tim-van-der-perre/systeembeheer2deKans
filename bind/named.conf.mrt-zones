@@ -3,3 +3,7 @@ zone "testABC.tim-vanderperre.sb.uclllabs.be" {
     type master;
     file "/etc/bind/mrt-zone-files/db.testABC.tim-vanderperre.sb.uclllabs.be";
 };
+zone "subzoneaht9ja.tim-vanderperre.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/mrt-zone-files/db.subzoneaht9ja.tim-vanderperre.sb.uclllabs.be";
+};
