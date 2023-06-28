@@ -4,3 +4,5 @@ mrt/
 /etc/bind/mrt-zone-files/*
 /etc/bind/named.conf.mrt-zones
 /etc/bind/db.tim-vanderperre.sb.uclllabs.be
+/etc/bind/mrt-zone-files/
+db.subzone*
