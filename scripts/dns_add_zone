@@ -12,17 +12,24 @@ fi
 
 subzone="$1"
 
-# Add the zone file to named.conf.local
+# Add the zone file to named.conf.mrt-zones
 echo "zone \"$subzone.tim-vanderperre.sb.uclllabs.be\" {
     type master;
-    file \"/etc/bind/zones/$subzone.tim-vanderperre.sb.uclllabs.be.zone\";
+    file \"/etc/bind/mrt-zone-files/db.$subzone.tim-vanderperre.sb.uclllabs.be\";
 };" | sudo tee -a /etc/bind/named.conf.mrt-zones > /dev/null
 
 # Create the zone file
-sudo cp /etc/bind/zones/tim-vanderperre.sb.uclllabs.be.zone "/etc/bind/zones/$subzone.tim-vanderperre.sb.uclllabs.be.zone"
+sudo cp /etc/bind/zones/tim-vanderperre.sb.uclllabs.be.zone "/etc/bind/mrt-zone-files/db.$subzone.tim-vanderperre.sb.uclllabs.be"
 
-# Add NS record to the main zone
-echo -e "\n$subzone.tim-vanderperre.sb.uclllabs.be. IN NS ns.tim-vanderperre.sb.uclllabs.be." | sudo tee -a /etc/bind/zones/tim-vanderperre.sb.uclllabs.be.zone > /dev/null
+# Add NS record to the new zonefile
+echo -e "\n$subzone	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be." | sudo tee -a "/etc/bind/db.tim-vanderperre.sb.uclllabs.be" > /dev/null
+
+#increment the serial field value in zone file
+
+old=$(grep "Serial" /etc/bind/db.tim-vanderperre.sb.uclllabs.be | tr -dc '0-9')
+new=$((old + 1))
+sed -i "s/.*Serial.*/\t\t $new ;Serial/g" /etc/bind/db.tim-vanderperre.sb.uclllabs.be
+
 
 # Reload the DNS server
 sudo systemctl reload bind9

@@ -1,12 +1,7 @@
 #!/bin/bash
 
-if [ "$(whoami)" != "root" ]; then
+if [ "$EUID" -ne 0 ]; then
     echo "Error: This script must be run as root."
-    exit 1
-fi
-
-if [ $# -lt 4 ]; then
-    echo "Error: Insufficient arguments."
     exit 1
 fi
 
@@ -22,17 +17,32 @@ while getopts ":t:" opt; do
     esac
 done
 
-shift $((OPTIND - 1))
-hostname="$1"
-ip_address="$2"
-zone="$3"
-
 if [ -z "$record_type" ]; then
     record_type="A"
 fi
 
 case $record_type in
-    A | MX | CNAME)
+    A)
+	shift $((OPTIND - 1))
+	hostname="$1"
+	ip_address="$2"
+	zone="$3"
+        echo -e "$hostname\tIN\tA\t$ip_address" >> "/etc/bind/mrt-zone-files/db.$zone"
+        ;;
+    MX)
+	shift $((OPTIND - 1))
+	hostname="$1"
+	ip_address="$2"
+	zone="$3"    
+        echo -e "@\tIN\tMX\t10\t$hostname.tim-vanderperre.sb.uclllabs.be." >> "/etc/bind/mrt-zone-files/db.$zone"
+        echo -e "$hostname\tIN\tA\t$ip_address" >> "/etc/bind/mrt-zone-files/db.$zone"
+        ;;
+    CNAME)
+	
+	shift $((OPTIND - 1))
+	hostname="$1"
+	zone="$2"
+        echo -e "$hostname.tim-vanderperre.sb.uclllabs.be.\tIN\tCNAME\t$zone" >> "/etc/bind/mrt-zone-files/db.$zone"
         ;;
     *)
         echo "Error: Invalid record type."
@@ -40,9 +50,12 @@ case $record_type in
         ;;
 esac
 
-# Add the record to the zone file
-echo "$hostname IN $record_type $ip_address" | sudo tee -a "/etc/bind/zones/$zone.zone" > /dev/null
+# Increase serial number
+old=$(grep "Serial" "/etc/bind/mrt-zone-files/db.$zone" | tr -dc '0-9')
+new=$((old + 1))
+sed -i "s/$old\t\t;\sSerial/$new\t\t; Serial/" "/etc/bind/mrt-zone-files/db.$zone"
 
 # Reload the DNS server
-sudo systemctl reload bind9
+rndc reload
+systemctl restart bind9
 

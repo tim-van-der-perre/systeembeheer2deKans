@@ -1,1 +1,5 @@
 #hier komen de files van mrt
+zone "testABC.tim-vanderperre.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/mrt-zone-files/db.testABC.tim-vanderperre.sb.uclllabs.be";
+};
