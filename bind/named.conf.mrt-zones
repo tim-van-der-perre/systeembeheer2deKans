@@ -11,3 +11,11 @@ zone "subzoneuu1dah.tim-vanderperre.sb.uclllabs.be" {
     type master;
     file "/etc/bind/mrt-zone-files/db.subzoneuu1dah.tim-vanderperre.sb.uclllabs.be";
 };
+zone "subzonehiw9ph.tim-vanderperre.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/mrt-zone-files/db.subzonehiw9ph.tim-vanderperre.sb.uclllabs.be";
+};
+zone "subzoneeeh5il.tim-vanderperre.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/mrt-zone-files/db.subzoneeeh5il.tim-vanderperre.sb.uclllabs.be";
+};
