@@ -1,0 +1,49 @@
+#!/bin/bash
+
+# Check if the script is being run by root
+if [[ $EUID -ne 0 ]]; then
+    echo "This script must be run as root."
+    exit 1
+fi
+
+# Check if the FQDN argument is provided
+if [[ -z $1 ]]; then
+    echo "Please provide the FQDN as an argument."
+    exit 1
+fi
+
+# Extract the subdomain and zone from the FQDN
+fqdn=$1
+subdomain=${fqdn%%.*}
+zone=${fqdn#*.}
+
+# Check if the zone exists
+if ! grep -q "^zone \"$zone\"" /etc/bind/named.conf.local; then
+    echo "The zone '$zone' does not exist."
+    exit 1
+fi
+
+# Create the DocumentRoot directory
+docroot="/var/www/html/$fqdn"
+if [[ ! -d $docroot ]]; then
+    mkdir -p "$docroot"
+    echo "welcome $subdomain.$zone" > "$docroot/index.html"
+fi
+
+# Create the vhost configuration file
+vhost_conf="/etc/apache2/sites-available/$fqdn.conf"
+cat <<EOF >"$vhost_conf"
+<VirtualHost *:80>
+    ServerName $fqdn
+    DocumentRoot $docroot
+    ErrorLog \${APACHE_LOG_DIR}/$fqdn.error.log
+    CustomLog \${APACHE_LOG_DIR}/$fqdn.access.log combined
+</VirtualHost>
+EOF
+
+# Enable the vhost
+a2ensite "$fqdn.conf"
+
+# Restart Apache
+systemctl restart apache2
+
