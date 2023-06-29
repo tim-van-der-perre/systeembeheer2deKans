@@ -17,25 +17,27 @@ fqdn=$1
 subdomain=${fqdn%%.*}
 zone=${fqdn#*.}
 
-# Check if the zone exists
-if ! grep -q "^zone \"$zone\"" /etc/bind/named.conf.local; then
-    echo "The zone '$zone' does not exist."
+# Check if the zone has the IP address 193.191.177.226
+ip_address=$(dig +short $fqdn @1.1.1.1)
+if [[ $ip_address != "193.191.177.226" ]]; then
+    echo "'$fqdn' is not a zone or  does not have the required IP address."
     exit 1
 fi
 
 # Create the DocumentRoot directory
-docroot="/var/www/html/$fqdn"
-if [[ ! -d $docroot ]]; then
-    mkdir -p "$docroot"
-    echo "welcome $subdomain.$zone" > "$docroot/index.html"
-fi
+    mkdir -p "/var/www/$subdomain"
+   # echo "welcome $fqdn" >> "/var/www/$subdomain/index.html"
+    echo "welcome $fqdn" >> "/var/www/$subdomain/index.html"
+
+
 
 # Create the vhost configuration file
 vhost_conf="/etc/apache2/sites-available/$fqdn.conf"
 cat <<EOF >"$vhost_conf"
 <VirtualHost *:80>
     ServerName $fqdn
-    DocumentRoot $docroot
+    ServerAlias $fqdn
+    DocumentRoot /var/www/$subdomain
     ErrorLog \${APACHE_LOG_DIR}/$fqdn.error.log
     CustomLog \${APACHE_LOG_DIR}/$fqdn.access.log combined
 </VirtualHost>
@@ -45,5 +47,6 @@ EOF
 a2ensite "$fqdn.conf"
 
 # Restart Apache
+echo "restarting apache2 automatically because of the script."
 systemctl restart apache2
 

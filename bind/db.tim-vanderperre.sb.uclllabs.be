@@ -1,6 +1,6 @@
 $TTL 86400
 @       IN      SOA     ns.tim-vanderperre.sb.uclllabs.be. root.tim-vanderperre.sb.uclllabs.be. (
-		 16 ;Serial
+		 46 ;Serial
                             604800 ; Refresh
                             86400 ; Retry
                             2419200 ; Expire
@@ -50,3 +50,63 @@ subzoneuu1dah	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
 subzonehiw9ph	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
 
 subzoneeeh5il	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
+
+subzoneeedee1	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
+
+test321	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
+
+subzonepu2tei	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
+
+subzonemae5xi	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
+
+subzonere6lai	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
+
+subzoneee2aip	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
+
+subzoneke9eey	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
+
+subzoneag5if4	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
+
+subzoneopu0ki	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
+
+subzoneeexei8	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
+
+subzoneug9hik	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
+
+subzonekohf6i	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
+
+subzonedoo3ei	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
+
+subzoneseth8g	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
+
+subzonefoe9uo	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
+
+subzonezie1re	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
+
+subzoneeix3pe	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
+
+subzonepha6vi	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
+
+subzoneohy1yu	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
+
+subzonephai9z	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
+
+subzoneeo7sha	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
+
+subzoneyahd9o	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
+
+subzoneeco8du	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
+
+subzonedah9oo	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
+
+subzoneungei5	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
+
+subzoneaz0lai	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
+
+hallo123	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
+
+azertyuiop	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
+
+subzoneque9ae	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
+
+mongool	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
