@@ -195,3 +195,7 @@ zone "subzoneooyoi9.tim-vanderperre.sb.uclllabs.be" {
     type master;
     file "/etc/bind/mrt-zone-files/db.subzoneooyoi9.tim-vanderperre.sb.uclllabs.be";
 };
+zone "subzoneaish8c.tim-vanderperre.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/mrt-zone-files/db.subzoneaish8c.tim-vanderperre.sb.uclllabs.be";
+};
