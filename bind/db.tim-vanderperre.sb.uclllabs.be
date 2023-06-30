@@ -1,6 +1,6 @@
 $TTL 86400
 @       IN      SOA     ns.tim-vanderperre.sb.uclllabs.be. root.tim-vanderperre.sb.uclllabs.be. (
-		 62 ;Serial
+		 63 ;Serial
                             604800 ; Refresh
                             86400 ; Retry
                             2419200 ; Expire
@@ -22,6 +22,12 @@ www2	IN	A	193.191.177.226
 test	IN	A	193.191.177.254
 secure	IN	A	193.191.177.226
 supersecure	IN	A	193.191.177.226
+
+secure.tim-vanderperre.sb.uclllabs.be	IN	CAA	0	issue	"letsencrypt.org"
+secure.tim-vanderperre.sb.uclllabs.be   IN      CAA     0       iodef   "mailto:tim.vanderperre@student.ucll.be"
+
+supersecure.tim-vanderperre.sb.uclllabs.be   IN      CAA     0       issue   "letsencrypt.org"
+supersecure.tim-vanderperre.sb.uclllabs.be   IN      CAA     0       iodef   "mailto:tim.vanderperre@student.ucll.be"
 
 
 tester123	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
@@ -141,3 +147,5 @@ subzoneju9vov	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
 subzonezu0joo	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
 
 subzoneooyoi9	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
+
+subzoneaish8c	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
