@@ -139,3 +139,59 @@ zone "mongool.tim-vanderperre.sb.uclllabs.be" {
     type master;
     file "/etc/bind/mrt-zone-files/db.mongool.tim-vanderperre.sb.uclllabs.be";
 };
+zone "subzoneaiz6ph.tim-vanderperre.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/mrt-zone-files/db.subzoneaiz6ph.tim-vanderperre.sb.uclllabs.be";
+};
+zone "blabla.tim-vanderperre.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/mrt-zone-files/db.blabla.tim-vanderperre.sb.uclllabs.be";
+};
+zone "subzoneootu6o.tim-vanderperre.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/mrt-zone-files/db.subzoneootu6o.tim-vanderperre.sb.uclllabs.be";
+};
+zone "subzonehiaca0.tim-vanderperre.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/mrt-zone-files/db.subzonehiaca0.tim-vanderperre.sb.uclllabs.be";
+};
+zone "subzonenoh7ve.tim-vanderperre.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/mrt-zone-files/db.subzonenoh7ve.tim-vanderperre.sb.uclllabs.be";
+};
+zone "subzonezu4bie.tim-vanderperre.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/mrt-zone-files/db.subzonezu4bie.tim-vanderperre.sb.uclllabs.be";
+};
+zone "subzonehoht7o.tim-vanderperre.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/mrt-zone-files/db.subzonehoht7o.tim-vanderperre.sb.uclllabs.be";
+};
+zone "subzoneahx7no.tim-vanderperre.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/mrt-zone-files/db.subzoneahx7no.tim-vanderperre.sb.uclllabs.be";
+};
+zone "subzoneooqu0x.tim-vanderperre.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/mrt-zone-files/db.subzoneooqu0x.tim-vanderperre.sb.uclllabs.be";
+};
+zone "subzoneahbee0.tim-vanderperre.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/mrt-zone-files/db.subzoneahbee0.tim-vanderperre.sb.uclllabs.be";
+};
+zone "subzonefaen8e.tim-vanderperre.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/mrt-zone-files/db.subzonefaen8e.tim-vanderperre.sb.uclllabs.be";
+};
+zone "subzoneju9vov.tim-vanderperre.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/mrt-zone-files/db.subzoneju9vov.tim-vanderperre.sb.uclllabs.be";
+};
+zone "subzonezu0joo.tim-vanderperre.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/mrt-zone-files/db.subzonezu0joo.tim-vanderperre.sb.uclllabs.be";
+};
+zone "subzoneooyoi9.tim-vanderperre.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/mrt-zone-files/db.subzoneooyoi9.tim-vanderperre.sb.uclllabs.be";
+};
