@@ -19,6 +19,7 @@ options {
 	// you will need to update your keys.  See https://www.isc.org/bind-keys
 	//========================================================================
 	dnssec-validation auto;
-
+	
+	
 	listen-on-v6 { any; };
 };
