@@ -1,0 +1,11 @@
+[Unit]
+Description=Load static ARP entries
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/sbin/arp -i eth0 -s 193.191.177.254 ca:fe:c0:ff:ee:00
+
+[Install]
+WantedBy=multi-user.target
+

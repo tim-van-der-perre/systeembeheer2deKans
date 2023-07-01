@@ -7,3 +7,4 @@ mrt/
 /etc/bind/mrt-zone-files/
 db.subzone*
 apache2/sites-available/*.subzone*
+apache2/sites-enabled/*.subzone*

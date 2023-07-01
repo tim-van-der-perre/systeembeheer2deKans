@@ -311,3 +311,11 @@ zone "subzoneiu4tea.tim-vanderperre.sb.uclllabs.be" {
     type master;
     file "/etc/bind/mrt-zone-files/db.subzoneiu4tea.tim-vanderperre.sb.uclllabs.be";
 };
+zone "subzonebe5ees.tim-vanderperre.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/mrt-zone-files/db.subzonebe5ees.tim-vanderperre.sb.uclllabs.be";
+};
+zone "subzoneeipoh9.tim-vanderperre.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/mrt-zone-files/db.subzoneeipoh9.tim-vanderperre.sb.uclllabs.be";
+};
