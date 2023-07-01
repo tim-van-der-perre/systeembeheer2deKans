@@ -1,6 +1,6 @@
 $TTL 86400
 @       IN      SOA     ns.tim-vanderperre.sb.uclllabs.be. root.tim-vanderperre.sb.uclllabs.be. (
-		 90 ;Serial
+		 92 ;Serial
                             604800 ; Refresh
                             86400 ; Retry
                             2419200 ; Expire
@@ -29,6 +29,12 @@ secure.tim-vanderperre.sb.uclllabs.be   IN      CAA     0       iodef   "mailto:
 
 supersecure.tim-vanderperre.sb.uclllabs.be   IN      CAA     0       issue   "letsencrypt.org"
 supersecure.tim-vanderperre.sb.uclllabs.be   IN      CAA     0       iodef   "mailto:tim.vanderperre@student.ucll.be"
+
+;SMTP records
+
+@ IN MX 10 mx.tim-vanderperre.sb.uclllabs.be
+mx	IN	A	193.191.177.226
+
 ;aditional records
 
 tester123	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
