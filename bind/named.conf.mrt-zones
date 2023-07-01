@@ -307,3 +307,7 @@ zone "subzoneii6aes.tim-vanderperre.sb.uclllabs.be" {
     type master;
     file "/etc/bind/mrt-zone-files/db.subzoneii6aes.tim-vanderperre.sb.uclllabs.be";
 };
+zone "subzoneiu4tea.tim-vanderperre.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/mrt-zone-files/db.subzoneiu4tea.tim-vanderperre.sb.uclllabs.be";
+};
