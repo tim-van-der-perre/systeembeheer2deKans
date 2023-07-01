@@ -32,7 +32,7 @@ supersecure.tim-vanderperre.sb.uclllabs.be   IN      CAA     0       iodef   "ma
 
 ;SMTP records
 
-@ IN MX 10 mx.tim-vanderperre.sb.uclllabs.be
+@	IN	MX	10	mx
 mx	IN	A	193.191.177.226
 
 ;aditional records
