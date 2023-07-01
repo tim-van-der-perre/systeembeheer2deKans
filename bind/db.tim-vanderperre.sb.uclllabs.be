@@ -1,6 +1,6 @@
 $TTL 86400
 @       IN      SOA     ns.tim-vanderperre.sb.uclllabs.be. root.tim-vanderperre.sb.uclllabs.be. (
-		 95 ;Serial
+		 96 ;Serial
                             604800 ; Refresh
                             86400 ; Retry
                             2419200 ; Expire
@@ -216,3 +216,5 @@ subzoneiu4tea	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
 subzonebe5ees	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
 
 subzoneeipoh9	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.
+
+subzoneoor7oh	 IN	 NS	 ns.tim-vanderperre.sb.uclllabs.be.

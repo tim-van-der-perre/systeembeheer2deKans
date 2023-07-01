@@ -319,3 +319,7 @@ zone "subzoneeipoh9.tim-vanderperre.sb.uclllabs.be" {
     type master;
     file "/etc/bind/mrt-zone-files/db.subzoneeipoh9.tim-vanderperre.sb.uclllabs.be";
 };
+zone "subzoneoor7oh.tim-vanderperre.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/mrt-zone-files/db.subzoneoor7oh.tim-vanderperre.sb.uclllabs.be";
+};
